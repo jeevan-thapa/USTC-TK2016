@@ -23,9 +23,8 @@ sudo apt-get install -y powershell
 
 sudo apt-get install fdupes
 
-
+sudo apt-get install gunzip
 
 # Download USTC-TFC2016 dataset
-cd 1_Pcap | git clone https://github.com/yungshenglu/USTC-TFC2016.git
-
-
+cd 1_Pcap; git clone https://github.com/yungshenglu/USTC-TFC2016.git
+gunzip 1_Pcap/USTC-TFC2016/*/*
