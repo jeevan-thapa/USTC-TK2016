@@ -1,4 +1,4 @@
-$SOURCE_PCAP_DIR = "1_Pcap"
+$SOURCE_PCAP_DIR = "1_Pcap/USTC-TFC2016/Benign"
 
 if ($($args.Count) -ne 1) {
     Write-Host $($args.Count)
@@ -20,7 +20,7 @@ else {
         # Remove duplicate files
         Write-Host "[INFO] Removing duplicate files"
         fdupes -rdN ./2_Session/AllLayers/
-        fdupes -rdN ./2_Session/L7/
+#        fdupes -rdN ./2_Session/L7/
     }
     elseif ($($args[0]) -eq "-s") {
         Write-Host "[INFO] Spliting the PCAP file into each session"
@@ -34,7 +34,7 @@ else {
         # Remove duplicate files
         Write-Host "[INFO] Removing duplicate files"
         fdupes -rdN ./2_Session/AllLayers/
-        fdupes -rdN ./2_Session/L7/
+#        fdupes -rdN ./2_Session/L7/
     
     }
     elseif ($($args[0]) -eq "-p") {
@@ -57,7 +57,6 @@ else {
     } 
     else {
         Write-Host "[ERROR] Wrong format of command!"
-        Write-Host "[INFO] For Windows: .\1_Pcap2Session.ps1 <TYPE>"
         Write-Host "[INFO] For Linux:   pwsh 1_Pcap2Session.ps1 <TYPE>"
         Write-Host "[INFO] <TYPE>: -f (flow) | -s (session) | -p (packet)"
     }

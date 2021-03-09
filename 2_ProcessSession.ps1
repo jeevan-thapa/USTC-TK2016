@@ -10,7 +10,7 @@
 
 
 $SESSIONS_COUNT_LIMIT_MIN = 0
-$SESSIONS_COUNT_LIMIT_MAX = 60000
+$SESSIONS_COUNT_LIMIT_MAX = 15000
 $TRIMED_FILE_LEN = 784
 
 # Arguments
@@ -57,7 +57,6 @@ function processSession($SOURCE_SESSION_DIR) {
         foreach ($d in Get-ChildItem $p[0] -Directory) {
             New-Item -Path "$($p[1])\$($d.Name)" -ItemType Directory -Force
             foreach ($f in Get-ChildItem $d.fullname) {
-                Write-Host "[kjasddfjkashfhjakdf] All files will be trime"
                 Write-Host ReadAllBytes($f.FullName)
                 $content = [System.IO.File]::ReadAllBytes($f.FullName)
                 $len = $f.length - $TRIMED_FILE_LEN

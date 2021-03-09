@@ -8,12 +8,13 @@
 # can obtain one at http://mozilla.org/MPL/2.0/.
 # ==============================================================================
 
-import numpy
-from PIL import Image
 import binascii
 import errno
 import os
 import time
+
+import numpy
+from PIL import Image
 
 ''' GLOBAL PARAM '''
 PNG_SIZE = 28
